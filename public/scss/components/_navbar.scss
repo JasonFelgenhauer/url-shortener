@@ -1,0 +1,33 @@
+.nav {
+	height: 10vh;
+	justify-content: space-between;
+	border-bottom: 2px $color_4 solid;
+	&_left {
+		a {
+			font-size: 2em;
+			font-weight: 700;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+			color: $color_4;
+		}
+	}
+	&_right {
+		ul {
+			li {
+				display: inline;
+				margin: 0 10px;
+				a {
+					color: $color_4;
+					font-size: 1.2em;
+					font-weight: 700;
+					text-transform: uppercase;
+					letter-spacing: 0.3px;
+					transition: all 0.3s ease-in-out;
+					&:hover {
+						color: $color_2;
+					}
+				}
+			}
+		}
+	}
+}

@@ -4,6 +4,22 @@
 		<%- include('./partials/head') %>
 	</head>
 	<body>
-		<h1>Hello World</h1>
+		<%- include('./partials/navbar') %>
+		<header class="container header">
+			<div class="header_left">
+				<img src="http://pics.jason-fel.be/uploads/1659357883website-visit-link.png" alt="Url Illustration" />
+			</div>
+			<div class="header_right">
+				<form action="/" method="post">
+					<div>
+						<input type="text" name="long_url" placeholder="Enter a long URL to make a short URL" />
+					</div>
+					<div>
+						<input type="submit" value="Make short URL" />
+					</div>
+					<!-- <p>Your link: <span></span></p> -->
+				</form>
+			</div>
+		</header>
 	</body>
 </html>

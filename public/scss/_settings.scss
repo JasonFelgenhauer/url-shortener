@@ -4,9 +4,10 @@
 
 // Variable
 
-$color_1: #ffffff;
-$color_2: #880d1e;
-$color_3: #02020a;
+$color_1: #feefe5;
+$color_2: #de3c4b;
+$color_3: #050505;
+$color_4: #6ea4bf;
 $font: 'Rubik', sans-serif;
 
 // Reset
@@ -22,15 +23,15 @@ html,
 body {
 	font-family: $font;
 	font-size: 16px;
-	color: $color_3;
-	background: $color_1;
+	color: $color_1;
+	background: $color_3;
 }
 li {
 	list-style: none;
 }
 a {
 	text-decoration: none;
-	color: $color_3;
+	color: $color_1;
 }
 
 // General
@@ -39,6 +40,6 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 2000px;
+	max-width: 1600px;
 	margin: 0 auto;
 }

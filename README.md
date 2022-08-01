@@ -21,3 +21,4 @@ or download zip
 ## Push history
 
 1. Add structure of the project.
+2. Add navbar and home page.

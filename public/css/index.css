@@ -11,8 +11,8 @@ html,
 body {
   font-family: "Rubik", sans-serif;
   font-size: 16px;
-  color: #02020a;
-  background: #ffffff;
+  color: #feefe5;
+  background: #050505;
 }
 
 li {
@@ -21,13 +21,98 @@ li {
 
 a {
   text-decoration: none;
-  color: #02020a;
+  color: #feefe5;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 2000px;
+  max-width: 1600px;
   margin: 0 auto;
+}
+
+.header {
+  height: 90vh;
+  justify-content: space-between;
+}
+.header_left {
+  width: 35%;
+}
+.header_left img {
+  width: 100%;
+  height: auto;
+}
+.header_right {
+  width: 35%;
+}
+.header_right form {
+  background: #feefe5;
+  border-radius: 5px;
+  padding: 20px;
+  overflow: hidden;
+}
+.header_right form input {
+  width: 100%;
+  border: 2px solid #050505;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  background: #050505;
+  color: #feefe5;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.3s ease-in-out;
+}
+.header_right form input::-moz-placeholder {
+  color: #feefe5;
+}
+.header_right form input:-ms-input-placeholder {
+  color: #feefe5;
+}
+.header_right form input::placeholder {
+  color: #feefe5;
+}
+.header_right form input[type=submit] {
+  background: #de3c4b;
+  text-transform: uppercase;
+  border-color: #de3c4b;
+  cursor: pointer;
+}
+.header_right form input:hover {
+  transform: scale(1.1);
+}
+.header_right form p {
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #050505;
+  padding: 0 10px;
+}
+
+.nav {
+  height: 10vh;
+  justify-content: space-between;
+  border-bottom: 2px #6ea4bf solid;
+}
+.nav_left a {
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  color: #6ea4bf;
+}
+.nav_right ul li {
+  display: inline;
+  margin: 0 10px;
+}
+.nav_right ul li a {
+  color: #6ea4bf;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease-in-out;
+}
+.nav_right ul li a:hover {
+  color: #de3c4b;
 }/*# sourceMappingURL=index.css.map */

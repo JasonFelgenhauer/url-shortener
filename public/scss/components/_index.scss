@@ -1,0 +1,50 @@
+.header {
+	height: 90vh;
+	justify-content: space-between;
+	&_left {
+		width: 35%;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&_right {
+		width: 35%;
+		form {
+			background: $color_1;
+			border-radius: 5px;
+			padding: 20px;
+			overflow: hidden;
+			input {
+				width: 100%;
+				border: 2px solid $color_3;
+				border-radius: 5px;
+				padding: 10px;
+				margin: 10px 0;
+				background: $color_3;
+				color: $color_1;
+				font-weight: 600;
+				font-size: 1.1em;
+				transition: all 0.3s ease-in-out;
+				&::placeholder {
+					color: $color_1;
+				}
+				&[type='submit'] {
+					background: $color_2;
+					text-transform: uppercase;
+					border-color: $color_2;
+					cursor: pointer;
+				}
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+			p {
+				font-size: 1.2em;
+				margin-top: 20px;
+				color: $color_3;
+				padding: 0 10px;
+			}
+		}
+	}
+}
