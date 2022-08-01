@@ -115,4 +115,12 @@ a {
 }
 .nav_right ul li a:hover {
   color: #de3c4b;
+}
+
+.error {
+  height: 90vh;
+}
+.error img {
+  width: 50%;
+  height: auto;
 }/*# sourceMappingURL=index.css.map */
