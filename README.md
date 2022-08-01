@@ -23,3 +23,4 @@ or download zip
 1. Add structure of the project.
 2. Add navbar and home page.
 3. Add error page (404, 500).
+4. Start of why page

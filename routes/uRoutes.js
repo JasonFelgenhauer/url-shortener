@@ -4,4 +4,6 @@ const uController = require('../controllers/uController');
 
 router.get('/', uController.index);
 
+router.get('/why', uController.why);
+
 module.exports = router;
