@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head') %>
+	</head>
+	<body>
+		<%- include('./partials/navbar') %>
+		<section class="container login">
+			<h2>Register</h2>
+			<form action="/register" method="post">
+				<div>
+					<input type="text" name="register_pseudo" placeholder="Pseudo" />
+				</div>
+				<div>
+					<input type="email" name="register_email" placeholder="Email address" />
+				</div>
+				<div>
+					<input type="password" name="register_password" placeholder="Password" />
+				</div>
+				<div>
+					<input type="password" name="register_password_confirm" placeholder="Confirm password" />
+				</div>
+				<div>
+					<input type="submit" value="Register" />
+				</div>
+				<div>
+					<a href="/login">Already have an account?</a>
+				</div>
+			</form>
+		</section>
+	</body>
+</html>

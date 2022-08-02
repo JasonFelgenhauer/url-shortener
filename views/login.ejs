@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head') %>
+	</head>
+	<body>
+		<%- include('./partials/navbar') %>
+		<section class="container login">
+			<h2>Login</h2>
+			<form action="/login" method="post">
+				<div>
+					<input type="email" name="login_email" placeholder="Email address" />
+				</div>
+				<div>
+					<input type="password" name="login_password" placeholder="Password" />
+				</div>
+				<div>
+					<input type="submit" value="Login" />
+				</div>
+				<div>
+					<a href="/register">Don't have an account?</a>
+				</div>
+			</form>
+		</section>
+	</body>
+</html>

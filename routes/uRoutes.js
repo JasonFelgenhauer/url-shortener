@@ -6,4 +6,8 @@ router.get('/', uController.index);
 
 router.get('/why', uController.why);
 
+router.get('/login', uController.login);
+
+router.get('/register', uController.register);
+
 module.exports = router;
