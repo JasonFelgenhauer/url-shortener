@@ -10,4 +10,6 @@ router.get('/login', uController.login);
 
 router.get('/register', uController.register);
 
+router.post('/register', uController.registerPost);
+
 module.exports = router;

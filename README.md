@@ -25,3 +25,4 @@ or download zip
 3. Add error page (404, 500).
 4. Start of why page.
 5. End of why page and add login/register page.
+6. Treatment of the register form.

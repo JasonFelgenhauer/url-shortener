@@ -8,6 +8,11 @@
 		<section class="container login">
 			<h2>Login</h2>
 			<form action="/login" method="post">
+				<% if(success.length){ %>
+				<div>
+					<p><%= success %></p>
+				</div>
+				<% } %>
 				<div>
 					<input type="email" name="login_email" placeholder="Email address" />
 				</div>
