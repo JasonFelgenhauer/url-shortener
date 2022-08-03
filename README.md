@@ -26,3 +26,4 @@ or download zip
 4. Start of why page.
 5. End of why page and add login/register page.
 6. Treatment of the register form.
+7. Treatment of the login form.

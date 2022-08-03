@@ -8,9 +8,13 @@
 		<section class="container login">
 			<h2>Login</h2>
 			<form action="/login" method="post">
-				<% if(success.length){ %>
+				<% if(typeof(success) == 'string'){ %>
 				<div>
 					<p><%= success %></p>
+				</div>
+				<% } %> <% if(typeof(errors) == 'string'){ %>
+				<div>
+					<p><%= errors %></p>
 				</div>
 				<% } %>
 				<div>
