@@ -1,0 +1,37 @@
+.history {
+	min-height: 90vh;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	h2 {
+		font-size: 2.5em;
+		margin: 100px 0;
+	}
+	table {
+		border: 3px solid $color_3;
+		border-collapse: collapse;
+		width: 100%;
+		table-layout: fixed;
+		tr {
+			background: $color_4;
+			border: 1px solid $color_3;
+			padding: 0.35em;
+		}
+		th,
+		td {
+			padding: 0.625em;
+			border: 1px solid $color_1;
+			padding: 0.35em;
+			color: $color_3;
+			text-align: center;
+			a {
+				color: $color_3;
+			}
+		}
+		th {
+			font-size: 0.85em;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+	}
+}

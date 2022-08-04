@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head') %>
+	</head>
+	<body>
+		<%- include('./partials/navbar') %>
+		<section class="container history">
+			<h2>All links</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Link</th>
+						<th>Short Link</th>
+						<th>Code</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(let l of links){ %>
+					<tr>
+						<td><%= l.link %></td>
+						<td><%= l.shortLink %></td>
+						<td><%= l.code %></td>
+						<td>
+							<a href="/delete/<%= l.code %>">delete</a>
+						</td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</section>
+	</body>
+</html>

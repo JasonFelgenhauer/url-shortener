@@ -218,4 +218,43 @@ a {
   font-weight: 700;
   font-size: 1.2em;
   text-transform: uppercase;
+}
+
+.history {
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.history h2 {
+  font-size: 2.5em;
+  margin: 100px 0;
+}
+.history table {
+  border: 3px solid #050505;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+.history table tr {
+  background: #6ea4bf;
+  border: 1px solid #050505;
+  padding: 0.35em;
+}
+.history table th,
+.history table td {
+  padding: 0.625em;
+  border: 1px solid #feefe5;
+  padding: 0.35em;
+  color: #050505;
+  text-align: center;
+}
+.history table th a,
+.history table td a {
+  color: #050505;
+}
+.history table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }/*# sourceMappingURL=index.css.map */

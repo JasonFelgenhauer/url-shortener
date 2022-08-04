@@ -29,3 +29,4 @@ or download zip
 7. Treatment of the login form.
 8. Treatment of logout.
 9. Generate short URL.
+10. Add history page.

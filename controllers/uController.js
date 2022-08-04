@@ -168,7 +168,17 @@ const loginPost = catchAsync(async (req, res) => {
 
 const logout = catchAsync(async (req, res) => {
 	res.clearCookie('jwt');
+	res.clearCookie('user');
 	res.redirect('/');
+});
+
+const history = catchAsync(async (req, res) => {
+	const cookie = checkCookie(req);
+	const id = req.cookies.user._id;
+
+	const links = await Link.find({ user: id });
+
+	res.render('history', { title: 'History', cookie, links });
 });
 
 module.exports = {
@@ -182,4 +192,5 @@ module.exports = {
 	authenticate,
 	needAuthentication,
 	logout,
+	history,
 };
