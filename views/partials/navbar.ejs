@@ -6,8 +6,12 @@
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/why">Why</a></li>
+			<% if (cookie) {%>
 			<li><a href="/history">History</a></li>
+			<li><a href="/logout">Logout</a></li>
+			<% }else{%>
 			<li><a href="/login">Login</a></li>
+			<% } %>
 		</ul>
 	</div>
 </nav>

@@ -19,20 +19,44 @@ const authenticate = catchAsync(async (req, res, next) => {
 	});
 });
 
+const needAuthentication = catchAsync(async (req, res, next) => {
+	if (!req.cookies.jwt) {
+		return res.redirect('/');
+	} else {
+		next();
+	}
+});
+
 const index = catchAsync((req, res) => {
-	res.render('index', { title: 'Home' });
+	let cookie = false;
+	if (req.cookies.jwt) {
+		cookie = true;
+	}
+	res.render('index', { title: 'Home', cookie });
 });
 
 const why = catchAsync((req, res) => {
-	res.render('why', { title: 'Why' });
+	let cookie = false;
+	if (req.cookies.jwt) {
+		cookie = true;
+	}
+	res.render('why', { title: 'Why', cookie });
 });
 
 const login = catchAsync((req, res) => {
-	res.render('login', { title: 'Login', errors: req.flash('error') });
+	let cookie = false;
+	if (req.cookies.jwt) {
+		cookie = true;
+	}
+	res.render('login', { title: 'Login', errors: req.flash('error'), cookie });
 });
 
 const register = catchAsync((req, res) => {
-	res.render('register', { title: 'Register', errors: req.flash('error') });
+	let cookie = false;
+	if (req.cookies.jwt) {
+		cookie = true;
+	}
+	res.render('register', { title: 'Register', errors: req.flash('error'), cookie });
 });
 
 const registerPost = catchAsync(async (req, res) => {
@@ -98,11 +122,16 @@ const loginPost = catchAsync(async (req, res) => {
 
 	const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1800s' });
 	res.cookie('jwt', token, {
-		expires: new Date(Date.now() + 1800000),
+		expires: new Date(Date.now() + 2600000),
 		httpOnly: true,
 		secure: 'production',
 	});
 
+	res.redirect('/');
+});
+
+const logout = catchAsync(async (req, res) => {
+	res.clearCookie('jwt');
 	res.redirect('/');
 });
 
@@ -114,4 +143,6 @@ module.exports = {
 	registerPost,
 	loginPost,
 	authenticate,
+	needAuthentication,
+	logout,
 };

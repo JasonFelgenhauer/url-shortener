@@ -34,6 +34,3 @@ app.use('/', uRoutes);
 // app.use((err, req, res, next) => res.status(500).render('500', { title: '500' }));
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
-// YuMP6BzREX03UTzC
-// SESSION_SECRET="wv5LjJDwk04FqrWxHvtmbcXvjnhWXRal"
-// JWT_SECRET="Qvno0jGyu8HJD3lPdcCKHsuSEOlY11xu"
