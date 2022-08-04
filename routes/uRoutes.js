@@ -12,6 +12,8 @@ router.get('/register', uController.register);
 
 router.get('/logout', uController.logout);
 
+router.post('/', uController.indexPost);
+
 router.post('/register', uController.registerPost);
 
 router.post('/login', uController.loginPost);

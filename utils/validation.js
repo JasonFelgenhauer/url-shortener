@@ -20,7 +20,16 @@ const loginValidation = (body) => {
 	return loginValidationSchema.validate(body);
 };
 
+const urlValidation = (body) => {
+	const urlValidationSchema = joi.object({
+		long_url: joi.string().min(6).trim().required(),
+	});
+
+	return urlValidationSchema.validate(body);
+};
+
 module.exports = {
 	registerValidation,
 	loginValidation,
+	urlValidation,
 };

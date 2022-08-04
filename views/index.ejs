@@ -11,13 +11,22 @@
 			</div>
 			<div class="header_right">
 				<form action="/" method="post">
+					<% if(errors.length){ %>
+					<div>
+						<p><%= errors %></p>
+					</div>
+					<% } %>
 					<div>
 						<input type="text" name="long_url" placeholder="Enter a long URL to make a short URL" />
 					</div>
 					<div>
 						<input type="submit" value="Make short URL" />
 					</div>
-					<!-- <p>Your link: <span></span></p> -->
+					<% console.log(success); %> <% if(success.length){ %>
+					<div>
+						<a href="http://<%= success %>"><%= success %></a>
+					</div>
+					<% } %>
 				</form>
 			</div>
 		</header>

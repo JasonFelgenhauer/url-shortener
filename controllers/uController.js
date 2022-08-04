@@ -1,8 +1,9 @@
-const catchAsync = require('../helpers/catchAsync');
+const { catchAsync, makeId, checkCookie } = require('../utils/functions');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const validation = require('../validation/validation');
+const Link = require('../models/Link');
+const validation = require('../utils/validation');
 
 const authenticate = catchAsync(async (req, res, next) => {
 	const token = req.cookies.jwt;
@@ -28,34 +29,67 @@ const needAuthentication = catchAsync(async (req, res, next) => {
 });
 
 const index = catchAsync((req, res) => {
-	let cookie = false;
-	if (req.cookies.jwt) {
-		cookie = true;
+	const cookie = checkCookie(req);
+	res.render('index', { title: 'Home', success: req.flash('success'), errors: req.flash('error'), cookie });
+});
+
+const indexPost = catchAsync(async (req, res) => {
+	const longUrl = req.body.long_url;
+
+	const { error } = validation.urlValidation(req.body);
+
+	if (error != undefined) {
+		req.flash('error', error.details[0].message);
+		return res.redirect('/');
 	}
-	res.render('index', { title: 'Home', cookie });
+
+	const id = makeId();
+	const shortUrl = `${req.headers.host}/${id}`;
+
+	const linkExist = await Link.findOne({ code: id });
+	if (linkExist) {
+		req.flash('error', 'This link already exist');
+		return res.redirect('/');
+	}
+
+	if (req.cookies.user) {
+		const user = req.cookies.user._id;
+		const link = await Link.create({
+			link: longUrl,
+			shortLink: shortUrl,
+			code: id,
+			user: user,
+		});
+
+		req.flash('success', shortUrl);
+		return res.redirect('/');
+	} else {
+		const link = await Link.create({
+			link: longUrl,
+			shortLink: shortUrl,
+			code: id,
+			user: null,
+		});
+
+		req.flash('success', shortUrl);
+		return res.redirect('/');
+	}
+
+	res.redirect('/');
 });
 
 const why = catchAsync((req, res) => {
-	let cookie = false;
-	if (req.cookies.jwt) {
-		cookie = true;
-	}
+	const cookie = checkCookie(req);
 	res.render('why', { title: 'Why', cookie });
 });
 
 const login = catchAsync((req, res) => {
-	let cookie = false;
-	if (req.cookies.jwt) {
-		cookie = true;
-	}
+	const cookie = checkCookie(req);
 	res.render('login', { title: 'Login', errors: req.flash('error'), cookie });
 });
 
 const register = catchAsync((req, res) => {
-	let cookie = false;
-	if (req.cookies.jwt) {
-		cookie = true;
-	}
+	const cookie = checkCookie(req);
 	res.render('register', { title: 'Register', errors: req.flash('error'), cookie });
 });
 
@@ -66,8 +100,6 @@ const registerPost = catchAsync(async (req, res) => {
 	const passwordConfirm = req.body.register_password_confirm;
 
 	const { error } = validation.registerValidation(req.body);
-
-	console.log(error);
 
 	if (password != passwordConfirm) {
 		req.flash('error', 'Passwords do not match');
@@ -126,7 +158,11 @@ const loginPost = catchAsync(async (req, res) => {
 		httpOnly: true,
 		secure: 'production',
 	});
-
+	res.cookie('user', user, {
+		expires: new Date(Date.now() + 2600000),
+		httpOnly: true,
+		secure: 'production',
+	});
 	res.redirect('/');
 });
 
@@ -137,6 +173,7 @@ const logout = catchAsync(async (req, res) => {
 
 module.exports = {
 	index,
+	indexPost,
 	why,
 	login,
 	register,

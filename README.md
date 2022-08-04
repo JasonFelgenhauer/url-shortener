@@ -28,3 +28,4 @@ or download zip
 6. Treatment of the register form.
 7. Treatment of the login form.
 8. Treatment of logout.
+9. Generate short URL.

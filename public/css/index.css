@@ -82,11 +82,23 @@ a {
 .header_right form input:hover {
   transform: scale(1.1);
 }
-.header_right form p {
+.header_right form div {
+  text-align: center;
+}
+.header_right form div p {
+  color: #feefe5;
+  background: #de3c4b;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-weight: 700;
   font-size: 1.2em;
-  margin-top: 20px;
+  text-transform: uppercase;
+}
+.header_right form div a {
   color: #050505;
-  padding: 0 10px;
+}
+.header_right form div a:hover {
+  text-decoration: underline;
 }
 
 .nav {
