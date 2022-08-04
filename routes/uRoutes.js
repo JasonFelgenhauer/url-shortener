@@ -6,13 +6,17 @@ router.get('/', uController.index);
 
 router.get('/why', uController.why);
 
-router.get('/login', uController.login);
+router.get('/login', uController.noAthentication, uController.login);
 
-router.get('/register', uController.register);
+router.get('/register', uController.noAthentication, uController.register);
 
-router.get('/logout', uController.logout);
+router.get('/logout', uController.needAuthentication, uController.logout);
 
 router.get('/history', uController.needAuthentication, uController.history);
+
+router.get('/delete/:id', uController.needAuthentication, uController.deleteLink);
+
+router.get('/:id', uController.redirect);
 
 router.post('/', uController.indexPost);
 

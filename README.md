@@ -30,3 +30,4 @@ or download zip
 8. Treatment of logout.
 9. Generate short URL.
 10. Add history page.
+11. Add delete system and redirect url.

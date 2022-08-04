@@ -28,6 +28,14 @@ const needAuthentication = catchAsync(async (req, res, next) => {
 	}
 });
 
+const noAthentication = catchAsync(async (req, res, next) => {
+	if (req.cookies.jwt) {
+		return res.redirect('/');
+	} else {
+		next();
+	}
+});
+
 const index = catchAsync((req, res) => {
 	const cookie = checkCookie(req);
 	res.render('index', { title: 'Home', success: req.flash('success'), errors: req.flash('error'), cookie });
@@ -181,6 +189,30 @@ const history = catchAsync(async (req, res) => {
 	res.render('history', { title: 'History', cookie, links });
 });
 
+const deleteLink = catchAsync(async (req, res) => {
+	const code = req.params.id;
+	const userId = req.cookies.user._id;
+	const link = await Link.findOne({ code: code, user: userId });
+
+	if (link) {
+		await Link.deleteOne({ code: code, user: userId });
+		res.redirect('/history');
+	} else {
+		res.redirect('/history');
+	}
+});
+
+const redirect = catchAsync(async (req, res) => {
+	const code = req.params.id;
+	const link = await Link.findOne({ code: code });
+
+	if (link) {
+		res.redirect(link.link);
+	} else {
+		res.redirect('/');
+	}
+});
+
 module.exports = {
 	index,
 	indexPost,
@@ -193,4 +225,7 @@ module.exports = {
 	needAuthentication,
 	logout,
 	history,
+	deleteLink,
+	noAthentication,
+	redirect,
 };
