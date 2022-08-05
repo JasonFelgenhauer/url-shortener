@@ -30,7 +30,7 @@ app.use(flash());
 app.use(cookieParser());
 
 app.use('/', uRoutes);
-// app.use((req, res, next) => res.status(404).render('404', { title: '404' }));
-// app.use((err, req, res, next) => res.status(500).render('500', { title: '500' }));
+app.use((req, res, next) => res.status(404).render('404', { title: '404' }));
+app.use((err, req, res, next) => res.status(500).render('500', { title: '500' }));
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
