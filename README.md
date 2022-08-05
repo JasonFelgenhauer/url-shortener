@@ -31,6 +31,7 @@ or download zip
 9. Generate short URL.
 10. Add history page.
 11. Add delete system and redirect url.
+12. Add responsive.
 
 ## ScreenShot
 

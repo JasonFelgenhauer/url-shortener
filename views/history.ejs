@@ -19,10 +19,10 @@
 				<tbody>
 					<% for(let l of links){ %>
 					<tr>
-						<td><%= l.link %></td>
-						<td><%= l.shortLink %></td>
-						<td><%= l.code %></td>
-						<td>
+						<td data-label="Link"><%= l.link %></td>
+						<td data-label="Short Link"><%= l.shortLink %></td>
+						<td data-label="Code"><%= l.code %></td>
+						<td data-label="Action">
 							<a href="/delete/<%= l.code %>">delete</a>
 						</td>
 					</tr>
@@ -30,5 +30,6 @@
 				</tbody>
 			</table>
 		</section>
+		<%- include('./partials/footer') %>
 	</body>
 </html>

@@ -59,4 +59,30 @@
 			}
 		}
 	}
+	@media (max-width: 1200px) {
+		&_left {
+			width: 55%;
+		}
+		&_right {
+			width: 45%;
+		}
+	}
+	@media (max-width: 800px) {
+		flex-direction: column;
+		justify-content: flex-start;
+		&_left {
+			width: 75%;
+		}
+		&_right {
+			width: 90%;
+		}
+	}
+	@media (max-width: 500px) {
+		&_left {
+			width: 100%;
+		}
+		&_right {
+			width: 95%;
+		}
+	}
 }

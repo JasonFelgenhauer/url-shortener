@@ -54,4 +54,12 @@
 			}
 		}
 	}
+	@media (max-width: 800px) {
+		h2 {
+			margin: 50px 0;
+		}
+		form {
+			width: 90%;
+		}
+	}
 }
