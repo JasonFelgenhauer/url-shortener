@@ -2,7 +2,7 @@
 
 # Url-Shortener
 
-Project: [here](https://github.com/JasonFelgenhauer/url-shortener)
+Project: [here](http://45.140.164.217:3003)
 
 ## Get the project
 
@@ -32,6 +32,7 @@ or download zip
 10. Add history page.
 11. Add delete system and redirect url.
 12. Add responsive.
+13. Update readme.
 
 ## ScreenShot
 
