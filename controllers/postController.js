@@ -48,7 +48,7 @@ const indexPost = catchAsync(async (req, res) => {
 	}
 
 	const id = makeId();
-	const shortUrl = `https://url-shortener.jason-fel.be/${id}`;
+	const shortUrl = `url-shortener.jason-fel.be/${id}`;
 
 	const linkExist = await Link.findOne({ code: id });
 	if (linkExist) {
