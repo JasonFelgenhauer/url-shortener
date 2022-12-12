@@ -33,6 +33,7 @@ or download zip
 11. Add delete system and redirect url.
 12. Add responsive.
 13. Update readme.
+14. Refacto & fix bug
 
 ## ScreenShot
 
