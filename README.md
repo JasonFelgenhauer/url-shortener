@@ -2,7 +2,7 @@
 
 # Url-Shortener
 
-Project: [here](http://45.140.164.217:3003)
+Project: [here](https://url-shortener.jason-fel.be)
 
 ## Get the project
 
